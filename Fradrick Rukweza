@@ -1,0 +1,743 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DADO FOREX ROBOT</title>
+    <style>
+        body {
+            background-color: #08143D;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        #iphone {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #00ff58;
+            overflow: hidden;
+        }
+
+        #screen {
+            width: 280px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #16e973;
+            overflow: hidden;
+        }
+
+        #header {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #00ff04;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #options {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .option {
+            margin-bottom: 10px;
+        }
+
+        .option label {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .option select,
+        .option input[type="text"],
+        .option input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            color: blue;
+        }
+
+        #submit-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        #trading-result {
+            text-align: center;
+            display: none;
+        }
+
+        #trading-result h2 {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        #disclaimer-message {
+    position: fixed; /* Keeps the message fixed on the screen */
+    top: 20%; /* Centers vertically with some margin */
+    left: 20%; /* Centers horizontally with some margin */
+    width: 60%; /* Width of the message box */
+    height: 60%; /* Height of the message box, making it more square-like */
+    padding: 20px; /* Padding inside the message box */
+    background-color: #808080; /* Gray background */
+    border: 3px solid yellow; /* Yellow border */
+    color: white; /* White text color */
+    text-align: center; /* Center aligns the text */
+    font-size: 1.2em; /* Adjust text size */
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensures it's above other content */
+    overflow: auto; /* Adds
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAOTIC FOREX ROBOT</title>
+    <style>
+        body {
+            background-color: #08143D;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        #iphone {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #00ff58;
+            overflow: hidden;
+        }
+
+        #screen {
+            width: 280px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #16e973;
+            overflow: hidden;
+        }
+
+        #header {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #00ff04;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #options {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .option {
+            margin-bottom: 10px;
+        }
+
+        .option label {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .option select,
+        .option input[type="text"],
+        .option input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            color: blue;
+        }
+
+        #submit-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        #trading-result {
+            text-align: center;
+            display: none;
+        }
+
+        #trading-result h2 {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        #disclaimer-message {
+    position: fixed; /* Keeps the message fixed on the screen */
+    top: 20%; /* Centers vertically with some margin */
+    left: 20%; /* Centers horizontally with some margin */
+    width: 60%; /* Width of the message box */
+    height: 60%; /* Height of the message box, making it more square-like */
+    padding: 20px; /* Padding inside the message box */
+    background-color: #808080; /* Gray background */
+    border: 3px solid yellow; /* Yellow border */
+    color: white; /* White text color */
+    text-align: center; /* Center aligns the text */
+    font-size: 1.2em; /* Adjust text size */
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensures it's above other content */
+    overflow: auto; /* Adds scroll if content is too much */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); /* Shadow for depth */
+}
+    </style>
+</head>
+<body>
+        <div id="iphone">
+        <div id="header">
+            <h1>CHAOTIC FOREX ROBOT</h1>
+        </div>
+        <div id="screen">
+            <form action="/start-trading" method="POST">
+                <div id="options">
+                    <div class="option">
+                        <label for="synthetic_index">Synthetic Indices:</label>
+                        <select name="synthetic_index" id="synthetic_index">
+                            <option value="R_75">Volatility 75</option>
+                            <option value="R_10">Volatility 10</option>
+                            <option value="R_25">Volatility 25</option>
+                            <option value="R_50">Volatility 50</option>
+                            <option value="R_100">Volatility 100</option>
+                        </select>
+                    </div>
+                    <div class="option">
+                        <label for="number_of_trades">Number Of Trades:</label>
+                        <input type="number" id="number_of_trades" name="number_of_trades" placeholder="Enter Number of Trades">
+                    </div>
+                    <div class="option">
+                        <label for="BROKER_API_Token">Broker API Token:</label>
+                        <input type="text" id="BROKER_API_Token" name="BROKER_API_Token" placeholder="Enter your Broker API Token">
+                    </div>
+                    <div class="option">
+                        <label for="BROKER_App_ID">Broker App ID:</label>
+                        <input type="text" id="BROKER_App_ID" name="BROKER_App_ID" placeholder="Enter your Broker App ID">
+                    </div>
+                    <div class="option">
+                        <label for="Serial_Key">Serial Key:</label>
+                        <input type="text" id="Serial_Key" name="Serial_Key" placeholder="Enter the Serial Key">
+                    </div>
+                    <div class="option">
+                        <label for="bet_amount">Bet Amount:</label>
+                        <input type="number" id="bet_amount" name="bet_amount" placeholder="Enter Bet Amount">
+                    </div>
+                </div>
+                <button id="submit-btn" type="submit">Start Trading</button>
+            </form>
+        </div>
+    </div>
+    <div id="trading-result">
+        <h2>Trading in progress...</h2>
+        <!-- Add more trading details here -->
+        <button id="stop-trading">Stop Trading</button>
+        <button id="show-balance">Show Account Balance</button>
+        <button id="show-trades">Show Number of Trades</button>
+    </div>
+
+    <script>
+
+  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Dashboard</title>
+    <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        text-align: center;
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    td {
+        background-color: white;
+        color: black;
+    }
+    .red-bar {
+        background-color: red;
+        width: 50px;
+        height: 20px;
+    }
+    .yellow-bar {
+        background-color: yellow;
+        width: 50px;
+        height: 20px;
+    }
+    .green-bar {
+        background-color: green;
+        width: 50px;
+        height: 20px;
+    }
+    .big-green-bar {
+        background-color: green;
+        width: 100px;
+        height: 20px;
+    }
+    .live-dot {
+        height: 10px; /* Reduced size for a more professional look */
+        width: 10px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+        animation: blink 1s infinite; /* Blinking effect */
+    }
+
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+<div id="disclaimer-message">
+    Disclaimer: Classic Forex Trader does not operate official accounts on TikTok or Facebook,
+<br>
+and all communications should be directed exclusively to his Official WhatsApp number (+27680536880). <br>
+
+<br> Please be cautious of any impersonators especially don't talk to anyone on telegram, TikTok, Facebook <br>
+
+claiming to represent Classic Forex Trader on these or any other platforms. <br>
+Always WhatsApp Me on +27680536880
+</div>
+<h2><span class="live-dot"></span> <span id="onlineCount">869</span> connected servers in our database.</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>IP address</th>
+                <th>Port</th>
+                <th>Country</th>
+                <th>CR NUMBERS</th>
+                <th>BROKER: (NAME/LINK)</th>
+                <th>Reference</th>
+                <th>Profit/Loss</th>
+                <th>Trades Time</th>
+            </tr>
+        </thead>
+        <tbody id="tableData">
+        </tbody>
+    </table>
+    <script>
+        window.onload = function() {
+        var disclaimer = document.getElementById('disclaimer-message');
+        disclaimer.style.display = 'block';
+        setTimeout(function() {
+            disclaimer.style.display = 'none';
+        }, 8000);
+    };
+
+        async function fetchData() {
+    try {
+        const response = await fetch('/get_data');
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null;
+    }
+}
+
+let trades = []; // Store fetched trades
+
+function updateTradeTimes() {
+    let now = Date.now() / 1000;  // Convert to seconds since JS uses milliseconds
+
+    trades.forEach(trade => {
+        let ageInSeconds = now - trade.trade_timestamp;
+
+        if (ageInSeconds < 60) {
+            trade.displayTime = `${Math.round(ageInSeconds)}s ago`;
+        } else {
+            let ageInMinutes = Math.floor(ageInSeconds / 60);
+            let remainingSeconds = Math.round(ageInSeconds % 60);
+            trade.displayTime = `${ageInMinutes}m ${remainingSeconds}s ago`;
+        }
+
+        // Update the table cell corresponding to this trade's time
+        let timeCell = document.getElementById(`tradeTime_${trade.reference}`);
+        if (timeCell) {
+            timeCell.innerText = trade.displayTime;
+        }
+    });
+
+    // Remove trades older than 2 minutes
+    trades = trades.filter(trade => now - trade.trade_timestamp < 2 * 60);
+}
+
+function addTradeToTop(data) {
+    trades.unshift(data); // Add the new trade to the start of the trades array
+
+    const tableBody = document.querySelector("#tableData");
+
+    // Construct the new trade row based on the data provided
+    let newRow = document.createElement("tr");
+    newRow.innerHTML = `
+        <td>${data.ip_address}</td>
+                    <td>${data.port}</td>
+                    <td>${data.country}</td>
+                    <td>${data.cr_numbers}</td>
+                    ${data.broker_info}
+                    <td>${data.reference}</td>
+                    ${data.profit_loss.profitOrLoss}
+                     <td id="tradeTime_${data.reference}">${data.displayTime}</td>
+    `;
+
+    // Prepend the new row to the table body
+    tableBody.prepend(newRow);
+
+    // Remove the last row if tableBody has more than 200 rows
+    while (tableBody.childElementCount > 200) {
+        tableBody.removeChild(tableBody.lastChild);
+    }
+}
+
+async function updateTable() {
+    const data = await fetchData();
+    if (data) {
+        addTradeToTop(data);
+    }
+}
+
+// Update the table every second
+setInterval(updateTable, 1000);
+
+// Call the function to start the updating process
+updateTradeTimes();
+setInterval(updateTradeTimes, 1000);
+document.addEventListener("DOMContentLoaded", function() {
+    const onlineCountElement = document.getElementById("onlineCount");
+
+    setInterval(function() {
+        fetch("/server_count")
+            .then(response => response.json())
+            .then(data => {
+                onlineCountElement.textContent = data.count;
+            });
+    }, 1300);
+});
+
+    </script>
+</body>
+</html>
+</script>
+<!-- Disclaimer -->
+<div style="padding: 20px; font-size: 14px; background-color: #0000FF; margin-top: 20px;">
+    <strong>Disclaimer:</strong> Classic Forex Trader does not operate official accounts on TikTok or Facebook, and all communications should be directed exclusively to his Official WhatsApp number (+27680536880). Please be cautious of any impersonators claiming to represent Classic Forex Trader on these or any other platforms.
+</div>
+
+<!-- Copyright Notice -->
+<div style="padding: 10px; font-size: 12px; background-color: #333; color: #fff; text-align: center; margin-top: 10px;">
+    CLASSIC FOREX TRADER - COPYRIGHT @ 2023 - ALL RIGHTS RESERVED
+</div>
+
+</body>
+</html> scroll if content is too much */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); /* Shadow for depth */
+}
+    </style>
+</head>
+<body>
+        <div id="iphone">
+        <div id="header">
+            <h1>DADO FOREX ROBOT</h1>
+        </div>
+        <div id="screen">
+            <form action="/start-trading" method="POST">
+                <div id="options">
+                    <div class="option">
+                        <label for="synthetic_index">Synthetic Indices:</label>
+                        <select name="synthetic_index" id="synthetic_index">
+                            <option value="R_75">Volatility 75</option>
+                            <option value="R_10">Volatility 10</option>
+                            <option value="R_25">Volatility 25</option>
+                            <option value="R_50">Volatility 50</option>
+                            <option value="R_100">Volatility 100</option>
+                        </select>
+                    </div>
+                    <div class="option">
+                        <label for="number_of_trades">Number Of Trades:</label>
+                        <input type="number" id="number_of_trades" name="number_of_trades" placeholder="Enter Number of Trades">
+                    </div>
+                    <div class="option">
+                        <label for="BROKER_API_Token">Broker API Token:</label>
+                        <input type="text" id="BROKER_API_Token" name="BROKER_API_Token" placeholder="Enter your Broker API Token">
+                    </div>
+                    <div class="option">
+                        <label for="BROKER_App_ID">Broker App ID:</label>
+                        <input type="text" id="BROKER_App_ID" name="BROKER_App_ID" placeholder="Enter your Broker App ID">
+
+                        
+                    </div>
+                    <div class="option">
+                        <label for="bet_amount">Bet Amount:</label>
+                        <input type="number" id="bet_amount" name="bet_amount" placeholder="Enter Bet Amount">
+                    </div>
+                </div>
+                <button id="submit-btn" type="submit">Start Trading</button>
+            </form>
+        </div>
+    </div>
+    <div id="trading-result">
+        <h2>Trading in progress...</h2>
+        <!-- Add more trading details here -->
+        <button id="stop-trading">Stop Trading</button>
+        <button id="show-balance">Show Account Balance</button>
+        <button id="show-trades">Show Number of Trades</button>
+    </div>
+
+    <script>
+
+  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Dashboard</title>
+    <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        text-align: center;
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    td {
+        background-color: white;
+        color: black;
+    }
+    .red-bar {
+        background-color: red;
+        width: 50px;
+        height: 20px;
+    }
+    .yellow-bar {
+        background-color: yellow;
+        width: 50px;
+        height: 20px;
+    }
+    .green-bar {
+        background-color: red;
+        width: 50px;
+        height: 20px;
+    }
+    .big-green-bar {
+        background-color: red;
+        width: 100px;
+        height: 20px;
+    }
+    .live-dot {
+        height: 10px; /* Reduced size for a more professional look */
+        width: 10px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        animation: blink 1s infinite; /* Blinking effect */
+    }
+
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+<div id="disclaimer-message">
+    Disclaimer: Classic Forex Trader does not operate official accounts on TikTok or Facebook,
+<br>
+and all communications should be directed exclusively to his Official WhatsApp number (+27680536880). <br>
+
+<br> Please be cautious of any impersonators especially don't talk to anyone on telegram, TikTok, Facebook <br>
+
+claiming to represent Classic Forex Trader on these or any other platforms. <br>
+Always WhatsApp Me on +27680536880
+</div>
+<h2><span class="live-dot"></span> <span id="onlineCount">869</span> connected servers in our database.</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>IP address</th>
+                <th>Port</th>
+                <th>Country</th>
+                <th>CR NUMBERS</th>
+                <th>BROKER: (NAME/LINK)</th>
+                <th>Reference</th>
+                <th>Profit/Loss</th>
+                <th>Trades Time</th>
+            </tr>
+        </thead>
+        <tbody id="tableData">
+        </tbody>
+    </table>
+    <script>
+        window.onload = function() {
+        var disclaimer = document.getElementById('disclaimer-message');
+        disclaimer.style.display = 'block';
+        setTimeout(function() {
+            disclaimer.style.display = 'none';
+        }, 8000);
+    };
+
+        async function fetchData() {
+    try {
+        const response = await fetch('/get_data');
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null;
+    }
+}
+
+let trades = []; // Store fetched trades
+
+function updateTradeTimes() {
+    let now = Date.now() / 1000;  // Convert to seconds since JS uses milliseconds
+
+    trades.forEach(trade => {
+        let ageInSeconds = now - trade.trade_timestamp;
+
+        if (ageInSeconds < 60) {
+            trade.displayTime = `${Math.round(ageInSeconds)}s ago`;
+        } else {
+            let ageInMinutes = Math.floor(ageInSeconds / 60);
+            let remainingSeconds = Math.round(ageInSeconds % 60);
+            trade.displayTime = `${ageInMinutes}m ${remainingSeconds}s ago`;
+        }
+
+        // Update the table cell corresponding to this trade's time
+        let timeCell = document.getElementById(`tradeTime_${trade.reference}`);
+        if (timeCell) {
+            timeCell.innerText = trade.displayTime;
+        }
+    });
+
+    // Remove trades older than 2 minutes
+    trades = trades.filter(trade => now - trade.trade_timestamp < 2 * 60);
+}
+
+function addTradeToTop(data) {
+    trades.unshift(data); // Add the new trade to the start of the trades array
+
+    const tableBody = document.querySelector("#tableData");
+
+    // Construct the new trade row based on the data provided
+    let newRow = document.createElement("tr");
+    newRow.innerHTML = `
+        <td>${data.ip_address}</td>
+                    <td>${data.port}</td>
+                    <td>${data.country}</td>
+                    <td>${data.cr_numbers}</td>
+                    ${data.broker_info}
+                    <td>${data.reference}</td>
+                    ${data.profit_loss.profitOrLoss}
+                     <td id="tradeTime_${data.reference}">${data.displayTime}</td>
+    `;
+
+    // Prepend the new row to the table body
+    tableBody.prepend(newRow);
+
+    // Remove the last row if tableBody has more than 200 rows
+    while (tableBody.childElementCount > 200) {
+        tableBody.removeChild(tableBody.lastChild);
+    }
+}
+
+async function updateTable() {
+    const data = await fetchData();
+    if (data) {
+        addTradeToTop(data);
+    }
+}
+
+// Update the table every second
+setInterval(updateTable, 1000);
+
+// Call the function to start the updating process
+updateTradeTimes();
+setInterval(updateTradeTimes, 1000);
+document.addEventListener("DOMContentLoaded", function() {
+    const onlineCountElement = document.getElementById("onlineCount");
+
+    setInterval(function() {
+        fetch("/server_count")
+            .then(response => response.json())
+            .then(data => {
+                onlineCountElement.textContent = data.count;
+            });
+    }, 1300);
+});
+
+    </script>
+</body>
+</html>
+</script>
+<!-- Disclaimer -->
+<div style="padding: 20px; font-size: 14px; background-color: #0000FF; margin-top: 20px;">
+    <strong>Disclaimer:</strong> Classic Forex Trader does not operate official accounts on TikTok or Facebook, and all communications should be directed exclusively to his Official WhatsApp number (+27680536880). Please be cautious of any impersonators claiming to represent Classic Forex Trader on these or any other platforms.
+</div>
+
+<!-- Copyright Notice -->
+<div style="padding: 10px; font-size: 12px; background-color: #333; color: #fff; text-align: center; margin-top: 10px;">
+    CLASSIC FOREX TRADER - COPYRIGHT @ 2023 - ALL RIGHTS RESERVED
+</div>
+
+</body>
+</html>
